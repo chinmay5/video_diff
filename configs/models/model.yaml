@@ -1,0 +1,39 @@
+# Model parameters
+model:
+  condition_on_text: False
+  dims:
+    - 64
+    - 64
+    - 64
+  channels:
+    - 1
+    - 1
+    - 1
+  dim_mults:
+    -
+      - 1
+      - 2
+      - 4
+      - 8
+    -
+      - 1
+      - 2
+      - 4
+      - 8
+    -
+      - 1
+      - 2
+      - 4
+      - 8
+  image_sizes:
+    - 48
+    - 48
+    - 96
+  temporal_downscale:
+    - 2
+    - 1
+    - 1
+  crop_sizes:
+    -   # Absence of a value is treated as None
+    -
+    - 48

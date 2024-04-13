@@ -1,0 +1,29 @@
+video_save_path: "experiments/images"
+device: "cuda"
+batch_size: 2
+max_iterations:
+  - 20000
+  - 50000
+  - 150000
+data_dir: '/mnt/dog/bran/CoW_MRI/imagesTr_resampled'
+num_workers: 16
+checkpoint_path: "."
+sampling_steps:
+  - 2500
+  - 5000
+  - 5000
+num_frames: 96
+train_unet_number: 3
+unet_1_checkpoint: "trained_video_1.pt"
+unet_2_checkpoint: "trained_video_2.pt"
+unet_3_checkpoint: "trained_video_3.pt"
+load_prev_checkpoint: True  # Load the lower res model in the cascaded model
+resume: False  # Resume training
+lr: 1e-4
+suffix: ""  # extra terms we want to put in the checkpoint being saved. This is optional
+
+# Some wandb configurations
+wandb:
+  project: "video_diff"
+  mode: "offline"
+
